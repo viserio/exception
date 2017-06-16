@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Displayers;
+namespace Viserio\Component\Exception\Displayer;
 
 use Interop\Http\Factory\ResponseFactoryInterface;
 use Interop\Http\Factory\StreamFactoryInterface;
@@ -9,11 +9,10 @@ use Throwable;
 use Viserio\Component\Contracts\Exception\Displayer as DisplayerContract;
 use Viserio\Component\Contracts\HttpFactory\Traits\ResponseFactoryAwareTrait;
 use Viserio\Component\Contracts\HttpFactory\Traits\StreamFactoryAwareTrait;
-use Viserio\Component\Contracts\View\Factory as FactoryContract;
 use Viserio\Component\Exception\ExceptionInfo;
-use Viserio\Component\Http\Response\HtmlResponse;
+use Viserio\Component\Http\Response\JsonResponse;
 
-class ViewDisplayer implements DisplayerContract
+class JsonDisplayer implements DisplayerContract
 {
     use ResponseFactoryAwareTrait;
     use StreamFactoryAwareTrait;
@@ -26,30 +25,20 @@ class ViewDisplayer implements DisplayerContract
     protected $info;
 
     /**
-     * The view factory instance.
-     *
-     * @var \Viserio\Component\Contracts\View\Factory
-     */
-    protected $factory;
-
-    /**
      * Create a new html displayer instance.
      *
      * @param \Viserio\Component\Exception\ExceptionInfo     $info
      * @param \Interop\Http\Factory\ResponseFactoryInterface $responseFactory
      * @param \Interop\Http\Factory\StreamFactoryInterface   $streamFactory
-     * @param \Viserio\Component\Contracts\View\Factory      $factory
      */
     public function __construct(
         ExceptionInfo $info,
         ResponseFactoryInterface $responseFactory,
-        StreamFactoryInterface $streamFactory,
-        FactoryContract $factory
+        StreamFactoryInterface $streamFactory
     ) {
         $this->info            = $info;
         $this->responseFactory = $responseFactory;
         $this->streamFactory   = $streamFactory;
-        $this->factory         = $factory;
     }
 
     /**
@@ -57,11 +46,11 @@ class ViewDisplayer implements DisplayerContract
      */
     public function display(Throwable $exception, string $id, int $code, array $headers): ResponseInterface
     {
-        $info = $this->info->generate($id, $code);
-        $view = $this->factory->create("errors.{$code}", $info);
+        $info  = $this->info->generate($id, $code);
+        $error = ['id' => $id, 'status' => $info['code'], 'title' => $info['name'], 'detail' => $info['detail']];
 
-        return new HtmlResponse(
-            (string) $view,
+        return new JsonResponse(
+            ['errors' => [$error]],
             $code,
             array_merge($headers, ['Content-Type' => $this->contentType()])
         );
@@ -72,7 +61,7 @@ class ViewDisplayer implements DisplayerContract
      */
     public function contentType(): string
     {
-        return 'text/html';
+        return 'application/json';
     }
 
     /**
@@ -80,7 +69,7 @@ class ViewDisplayer implements DisplayerContract
      */
     public function canDisplay(Throwable $original, Throwable $transformed, int $code): bool
     {
-        return $this->factory->exists("errors.{$code}");
+        return true;
     }
 
     /**

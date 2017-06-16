@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Filters;
+namespace Viserio\Component\Exception\Filter;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Throwable;

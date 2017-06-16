@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Displayers;
+namespace Viserio\Component\Exception\Tests\Displayer;
 
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Viserio\Component\Exception\Displayers\JsonDisplayer;
+use Viserio\Component\Exception\Displayer\JsonDisplayer;
 use Viserio\Component\Exception\ExceptionInfo;
 use Viserio\Component\HttpFactory\ResponseFactory;
 use Viserio\Component\HttpFactory\StreamFactory;

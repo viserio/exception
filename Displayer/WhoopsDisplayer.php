@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Displayers;
+namespace Viserio\Component\Exception\Displayer;
 
 use Psr\Http\Message\ResponseInterface;
 use Throwable;

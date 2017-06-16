@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Filters;
+namespace Viserio\Component\Exception\Tests\Filter;
 
 use Exception;
 use Interop\Http\Factory\ResponseFactoryInterface;
@@ -9,11 +9,11 @@ use Narrowspark\TestingHelper\ArrayContainer;
 use Narrowspark\TestingHelper\Phpunit\MockeryTestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Viserio\Component\Contracts\Config\Repository as RepositoryContract;
-use Viserio\Component\Exception\Displayers\HtmlDisplayer;
-use Viserio\Component\Exception\Displayers\JsonDisplayer;
-use Viserio\Component\Exception\Displayers\WhoopsDisplayer;
+use Viserio\Component\Exception\Displayer\HtmlDisplayer;
+use Viserio\Component\Exception\Displayer\JsonDisplayer;
+use Viserio\Component\Exception\Displayer\WhoopsDisplayer;
 use Viserio\Component\Exception\ExceptionInfo;
-use Viserio\Component\Exception\Filters\VerboseFilter;
+use Viserio\Component\Exception\Filter\VerboseFilter;
 use Viserio\Component\HttpFactory\ResponseFactory;
 use Viserio\Component\HttpFactory\StreamFactory;
 

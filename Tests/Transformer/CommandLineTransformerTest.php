@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Transformers;
+namespace Viserio\Component\Exception\Tests\Transformer;
 
 use ErrorException;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use Viserio\Component\Exception\Transformers\CommandLineTransformer;
+use Viserio\Component\Exception\Transformer\CommandLineTransformer;
 
 class CommandLineTransformerTest extends TestCase
 {

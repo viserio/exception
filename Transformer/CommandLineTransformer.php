@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Transformers;
+namespace Viserio\Component\Exception\Transformer;
 
 use ErrorException;
 use Exception;

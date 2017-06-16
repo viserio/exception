@@ -1,27 +1,27 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Providers;
+namespace Viserio\Component\Exception\Tests\Provider;
 
 use PHPUnit\Framework\TestCase;
-use Viserio\Component\Config\Providers\ConfigServiceProvider;
+use Viserio\Component\Config\Provider\ConfigServiceProvider;
 use Viserio\Component\Container\Container;
 use Viserio\Component\Contracts\Config\Repository as RepositoryContract;
-use Viserio\Component\Exception\Displayers\HtmlDisplayer;
-use Viserio\Component\Exception\Displayers\JsonDisplayer;
-use Viserio\Component\Exception\Displayers\ViewDisplayer;
-use Viserio\Component\Exception\Displayers\WhoopsDisplayer;
+use Viserio\Component\Exception\Displayer\HtmlDisplayer;
+use Viserio\Component\Exception\Displayer\JsonDisplayer;
+use Viserio\Component\Exception\Displayer\ViewDisplayer;
+use Viserio\Component\Exception\Displayer\WhoopsDisplayer;
 use Viserio\Component\Exception\ExceptionInfo;
-use Viserio\Component\Exception\Filters\CanDisplayFilter;
-use Viserio\Component\Exception\Filters\VerboseFilter;
+use Viserio\Component\Exception\Filter\CanDisplayFilter;
+use Viserio\Component\Exception\Filter\VerboseFilter;
 use Viserio\Component\Exception\Handler;
-use Viserio\Component\Exception\Providers\ExceptionServiceProvider;
-use Viserio\Component\Exception\Transformers\ClassNotFoundFatalErrorTransformer;
-use Viserio\Component\Exception\Transformers\CommandLineTransformer;
-use Viserio\Component\Exception\Transformers\UndefinedFunctionFatalErrorTransformer;
-use Viserio\Component\Exception\Transformers\UndefinedMethodFatalErrorTransformer;
-use Viserio\Component\Filesystem\Providers\FilesServiceProvider;
-use Viserio\Component\HttpFactory\Providers\HttpFactoryServiceProvider;
-use Viserio\Component\View\Providers\ViewServiceProvider;
+use Viserio\Component\Exception\Provider\ExceptionServiceProvider;
+use Viserio\Component\Exception\Transformer\ClassNotFoundFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\CommandLineTransformer;
+use Viserio\Component\Exception\Transformer\UndefinedFunctionFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\UndefinedMethodFatalErrorTransformer;
+use Viserio\Component\Filesystem\Provider\FilesServiceProvider;
+use Viserio\Component\HttpFactory\Provider\HttpFactoryServiceProvider;
+use Viserio\Component\View\Provider\ViewServiceProvider;
 
 class ExceptionServiceProviderTest extends TestCase
 {

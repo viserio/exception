@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Transformers;
+namespace Viserio\Component\Exception\Transformer;
 
 use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\Exception\OutOfMemoryException;
-use Symfony\Component\Debug\FatalErrorHandler\ClassNotFoundFatalErrorHandler;
+use Symfony\Component\Debug\FatalErrorHandler\UndefinedFunctionFatalErrorHandler;
 use Throwable;
 use Viserio\Component\Contracts\Exception\Transformer as TransformerContract;
 
-class ClassNotFoundFatalErrorTransformer implements TransformerContract
+class UndefinedFunctionFatalErrorTransformer implements TransformerContract
 {
     /**
      * {@inheritdoc}
@@ -23,7 +23,7 @@ class ClassNotFoundFatalErrorTransformer implements TransformerContract
                 'line'    => $exception->getLine(),
             ];
 
-            $handler = new ClassNotFoundFatalErrorHandler();
+            $handler = new UndefinedFunctionFatalErrorHandler();
 
             if ($e = $handler->handleError($error, $exception)) {
                 return $e;

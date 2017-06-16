@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Transformers;
+namespace Viserio\Component\Exception\Tests\Transformer;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\Exception\UndefinedFunctionException;
-use Viserio\Component\Exception\Transformers\UndefinedFunctionFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\UndefinedFunctionFatalErrorTransformer;
 
 class UndefinedFunctionFatalErrorTransformerTest extends TestCase
 {

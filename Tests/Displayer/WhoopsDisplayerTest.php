@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Displayers;
+namespace Viserio\Component\Exception\Tests\Displayer;
 
 use Exception;
 use PHPUnit\Framework\TestCase;
-use Viserio\Component\Exception\Displayers\WhoopsDisplayer;
+use Viserio\Component\Exception\Displayer\WhoopsDisplayer;
 
 class WhoopsDisplayerTest extends TestCase
 {

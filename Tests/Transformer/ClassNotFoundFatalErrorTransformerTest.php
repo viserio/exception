@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Transformers;
+namespace Viserio\Component\Exception\Tests\Transformer;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Debug\Exception\ClassNotFoundException;
 use Symfony\Component\Debug\Exception\FatalErrorException;
-use Viserio\Component\Exception\Transformers\ClassNotFoundFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\ClassNotFoundFatalErrorTransformer;
 
 class ClassNotFoundFatalErrorTransformerTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Displayers;
+namespace Viserio\Component\Exception\Tests\Displayer;
 
 use Exception;
 use Narrowspark\TestingHelper\ArrayContainer;
 use Narrowspark\TestingHelper\Phpunit\MockeryTestCase;
 use Viserio\Component\Contracts\Config\Repository as RepositoryContract;
-use Viserio\Component\Exception\Displayers\HtmlDisplayer;
+use Viserio\Component\Exception\Displayer\HtmlDisplayer;
 use Viserio\Component\Exception\ExceptionInfo;
 use Viserio\Component\HttpFactory\ResponseFactory;
 use Viserio\Component\HttpFactory\StreamFactory;

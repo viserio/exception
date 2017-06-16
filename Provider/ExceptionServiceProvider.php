@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Providers;
+namespace Viserio\Component\Exception\Provider;
 
 use Interop\Container\ServiceProvider;
 use Interop\Http\Factory\ResponseFactoryInterface;
@@ -9,18 +9,18 @@ use Psr\Container\ContainerInterface;
 use Viserio\Component\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
 use Viserio\Component\Contracts\Exception\Handler as HandlerContract;
 use Viserio\Component\Contracts\View\Factory as FactoryContract;
-use Viserio\Component\Exception\Displayers\HtmlDisplayer;
-use Viserio\Component\Exception\Displayers\JsonDisplayer;
-use Viserio\Component\Exception\Displayers\ViewDisplayer;
-use Viserio\Component\Exception\Displayers\WhoopsDisplayer;
+use Viserio\Component\Exception\Displayer\HtmlDisplayer;
+use Viserio\Component\Exception\Displayer\JsonDisplayer;
+use Viserio\Component\Exception\Displayer\ViewDisplayer;
+use Viserio\Component\Exception\Displayer\WhoopsDisplayer;
 use Viserio\Component\Exception\ExceptionInfo;
-use Viserio\Component\Exception\Filters\CanDisplayFilter;
-use Viserio\Component\Exception\Filters\VerboseFilter;
+use Viserio\Component\Exception\Filter\CanDisplayFilter;
+use Viserio\Component\Exception\Filter\VerboseFilter;
 use Viserio\Component\Exception\Handler;
-use Viserio\Component\Exception\Transformers\ClassNotFoundFatalErrorTransformer;
-use Viserio\Component\Exception\Transformers\CommandLineTransformer;
-use Viserio\Component\Exception\Transformers\UndefinedFunctionFatalErrorTransformer;
-use Viserio\Component\Exception\Transformers\UndefinedMethodFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\ClassNotFoundFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\CommandLineTransformer;
+use Viserio\Component\Exception\Transformer\UndefinedFunctionFatalErrorTransformer;
+use Viserio\Component\Exception\Transformer\UndefinedMethodFatalErrorTransformer;
 
 class ExceptionServiceProvider implements ServiceProvider
 {
