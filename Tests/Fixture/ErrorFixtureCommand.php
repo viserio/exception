@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Viserio\Component\Exception\Tests\Fixtures;
+namespace Viserio\Component\Exception\Tests\Fixture;
 
 use Viserio\Component\Console\Command\Command;
 
